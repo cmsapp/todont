@@ -15,7 +15,7 @@ class YOW2015 extends React.Component {
     super();
     this.state = {
       txt: 'Hello',
-      results: ['Result']
+      results: ['Result1', 'Result2']
     };
   }
 
@@ -51,7 +51,8 @@ class YOW2015 extends React.Component {
 
 var styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    padding: 10
   },
   textInput: {
     flex: 1
