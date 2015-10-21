@@ -6,26 +6,53 @@ var {
   StyleSheet,
   Text,
   View,
-  TextInput
+  TextInput,
+  ListView
 } = React;
 
 class YOW2015 extends React.Component {
   constructor() {
     super();
-    this.state = {txt: 'Hello'};
+    this.state = {
+      txt: 'Hello',
+      results: ['Result']
+    };
+  }
+
+  componentWillMount() {
+    this.dataSource = new ListView.DataSource({
+      rowHasChanged: (row1, row2) => row1 !== row2
+    });
   }
 
   render() {
+    var dataSource = this.dataSource.cloneWithRows(this.state.results);
+
     return (
-      <TextInput style={styles.textInput}
-        value={this.state.txt}
-        onChangeText={txt => this.setState({txt})}
-      />
+      <View style={styles.container}>
+        <TextInput style={styles.textInput}
+          value={this.state.txt}
+          onChangeText={txt => this.setState({txt})}
+        />
+        <ListView style={{flex: 1}}
+          dataSource={dataSource}
+          renderRow={this.renderRow}
+        />
+      </View>
+    );
+  }
+
+  renderRow(rowData, sectionID, rowID) {
+    return(
+      <Text>{rowData}</Text>
     );
   }
 }
 
 var styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   textInput: {
     flex: 1
   }
