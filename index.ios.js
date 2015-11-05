@@ -1,69 +1,36 @@
+
+
+
+
 'use strict';
 
 var React = require('react-native');
-var {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  ListView
-} = React;
+var TDListContainer = require('./TDListContainer');
+var colors = require('./colors');
 
-class YOW2015 extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      txt: 'Hello',
-      results: ['Result1', 'Result2']
-    };
-  }
+var { AppRegistry, StatusBarIOS, NavigatorIOS } = React;
 
-  componentWillMount() {
-    this.dataSource = new ListView.DataSource({
-      rowHasChanged: (row1, row2) => row1 !== row2
-    });
-  }
-
+class TDApp extends React.Component {
   render() {
-    var dataSource = this.dataSource.cloneWithRows(this.state.results);
-
+    StatusBarIOS.setStyle('light-content')
     return (
-      <View style={styles.container}>
-        <TextInput style={styles.textInput}
-          value={this.state.txt}
-          onChangeText={txt => this.setState({txt})}
-        />
-        <ListView style={{flex: 1}}
-          dataSource={dataSource}
-          renderRow={this.renderRow}
-        />
-      </View>
-    );
-  }
-
-  renderRow(rowData, sectionID, rowID) {
-    return(
-      <Text>{rowData}</Text>
+      <NavigatorIOS
+        initialRoute={{
+          component: TDListContainer,
+          title: 'Things not to do',
+          backButtonTitle: ' '
+        }}
+        barTintColor='rgb(18, 42, 86)'
+        tintColor='white'
+        titleTextColor='white'
+        style={{flex: 1}}
+      />
     );
   }
 }
 
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 10
-  },
-  textInput: {
-    color: '#000000',
-    fontSize: 17,
-    height: 36,
-    padding: 7,
-    borderRadius: 4,
-    borderColor: '#cccccc',
-    borderWidth: 1,
-    marginBottom: 5
-  }
-});
+AppRegistry.registerComponent('YOW2015', () => TDApp);
 
-AppRegistry.registerComponent('YOW2015', () => YOW2015);
+
+
+
