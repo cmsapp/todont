@@ -8,7 +8,7 @@ var { View } = React;
 
 var styles = {
   container: {
-    marginTop: 45,
+    marginTop: 65,
     flex:1
   }
 }
