@@ -4,12 +4,22 @@ var React = require('react-native');
 var TDList = require('./TDList');
 var TDButton = require('./TDButton');
 
-var { View } = React;
+var { View, TextInput } = React;
 
 var styles = {
   container: {
     marginTop: 65,
     flex:1
+  },
+  textbox: {
+    color: '#000000',
+    fontSize: 17,
+    height: 36,
+    padding: 7,
+    borderRadius: 4,
+    borderColor: '#cccccc',
+    borderWidth: 1,
+    marginBottom: 5
   }
 }
 
@@ -137,6 +147,7 @@ class TDListContainer extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <TextInput style={styles.textbox} value="Hello"></TextInput>
         <TDList
           items={this.state.items}
           onPressItem={this.openItem}
