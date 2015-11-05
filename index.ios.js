@@ -55,7 +55,14 @@ var styles = StyleSheet.create({
     padding: 10
   },
   textInput: {
-    flex: 1
+    color: '#000000',
+    fontSize: 17,
+    height: 36,
+    padding: 7,
+    borderRadius: 4,
+    borderColor: '#cccccc',
+    borderWidth: 1,
+    marginBottom: 5
   }
 });
 
