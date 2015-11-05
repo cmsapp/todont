@@ -2,13 +2,13 @@
 var React = require('react-native');
 
 var TDList = require('./TDList');
-var TDEdit = require('./TDEdit');
 var TDButton = require('./TDButton');
 
 var { View } = React;
 
 var styles = {
   container: {
+    marginTop: 45,
     flex:1
   }
 }
@@ -72,18 +72,66 @@ class TDListContainer extends React.Component {
     this.props.navigator.pop();
   }
 
-  openItem(rowData, rowID) {
-    this.props.navigator.push({
-      title: rowData && rowData.txt || 'New',
-      component: TDEdit,
-      passProps: {
+  previous(index) {
+    if (index > 0) {
+      var newIndex = index - 1;
+      var rowData = this.state.items[newIndex];
+      this.props.navigator.replace({
+        name: 'item',
+        title: rowData.txt,
         item: rowData,
-        id: rowID,
+        itemId: newIndex.toString(),
         update: this.updateItem,
         back: this.back.bind(this),
-        delete: this.deleteItem
-      }
+        previous: this.previous.bind(this, newIndex),
+        next: this.next.bind(this, newIndex),
+        delete: this.deleteItem,
+      });
+    }
+  }
+
+  next(index) {
+    if (index < (this.state.items.length -1)) {
+      var newIndex = index + 1;
+      var rowData = this.state.items[newIndex];
+      this.props.navigator.replace({
+        name: 'item',
+        title: rowData.txt,
+        item: rowData,
+        itemId: newIndex.toString(),
+        update: this.updateItem,
+        back: this.back.bind(this),
+        previous: this.previous.bind(this, newIndex),
+        next: this.next.bind(this, newIndex),
+        delete: this.deleteItem,
+        fromPrevious: true
+      });
+    }
+  }
+
+  openItem(rowData, rowID) {
+    var index = parseInt(rowID);
+    this.props.navigator.push({
+      name: 'item',
+      title: rowData && rowData.txt || 'New',
+      item: rowData,
+      itemId: rowID,
+      update: this.updateItem,
+      back: this.back.bind(this),
+      previous: this.previous.bind(this, index),
+      next: this.next.bind(this, index),
+      delete: this.deleteItem
     });
+    //   title: rowData && rowData.txt || 'New',
+    //   component: TDEdit,
+    //   passProps: {
+    //     item: rowData,
+    //     id: rowID,
+    //     update: this.updateItem,
+    //     back: this.back.bind(this),
+    //     delete: this.deleteItem
+    //   }
+    // });
   }
 
   render() {

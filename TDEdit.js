@@ -7,7 +7,7 @@ var colors = require('./colors');
 var TDSeverity = require('./TDSeverity');
 var TDLabel = require('./TDLabel');
 var TDButton = require('./TDButton');
-var TDBackSwipable = require('./TDBackSwipable');
+var TDSwipable = require('./TDSwipable');
 
 var {
   View,
@@ -91,8 +91,10 @@ class TDEdit extends React.Component {
             </View>
         }
 
-        <TDBackSwipable
+        <TDSwipable
           onBackSwipe={this.props.back}
+          onUpSwipe={this.props.previous}
+          onDownSwipe={this.props.next}
           style={styles.backSwipe}
         />
       </View>
