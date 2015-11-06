@@ -26,7 +26,7 @@ var styles = {
 class TDListContainer extends React.Component {
   constructor() {
     super();
-    this.state = {items: []};
+    this.state = {items: [], filter: ''};
     this.deleteItem = this.deleteItem.bind(this);
     this.updateItem = this.updateItem.bind(this);
     this.newItem = this.openItem = this.openItem.bind(this);
@@ -145,6 +145,9 @@ class TDListContainer extends React.Component {
   }
 
   render() {
+    var items = 
+      this.state.items.filter(item => item.txt.includes(this.state.filter));
+
     return (
       <View style={styles.container}>
         <TextInput style={styles.textbox} 
@@ -152,7 +155,7 @@ class TDListContainer extends React.Component {
           onChangeText={filter => this.setState({filter})}>
         </TextInput>
         <TDList
-          items={this.state.items}
+          items={items}
           onPressItem={this.openItem}
         />
         <TDButton text="New" onPress={this.newItem}/>
