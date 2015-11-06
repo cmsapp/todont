@@ -62,7 +62,7 @@ var NavigationBarRouteMapper = {
       <TouchableOpacity
         onPress={() => navigator.pop()}
         style={styles.navBarLeftButton}>
-        <Image source={require('image!BackLink')} style={{height: 20, width: 20, marginTop: 10}}/>
+        <Image source={require('image!backlink')} style={{height: 20, width: 20, marginTop: 10}}/>
       </TouchableOpacity>
     );
   },
