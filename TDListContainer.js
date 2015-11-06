@@ -146,7 +146,9 @@ class TDListContainer extends React.Component {
 
   render() {
     var items = 
-      this.state.items.filter(item => item.txt.includes(this.state.filter));
+      this.state.items.filter(item => { 
+        return item.txt.toUpperCase().includes(this.state.filter.toUpperCase());
+      });
 
     return (
       <View style={styles.container}>
