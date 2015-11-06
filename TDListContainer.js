@@ -147,7 +147,10 @@ class TDListContainer extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <TextInput style={styles.textbox} value="Hello"></TextInput>
+        <TextInput style={styles.textbox} 
+          value={this.state.filter}
+          onChangeText={filter => this.setState({filter})}>
+        </TextInput>
         <TDList
           items={this.state.items}
           onPressItem={this.openItem}
