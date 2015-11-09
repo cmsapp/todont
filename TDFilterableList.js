@@ -20,17 +20,15 @@ var styles = {
   }
 }
 
+var dataSource = new ListView.DataSource({
+	rowHasChanged: (row1, row2) => row1 !== row2
+});
+
 class TDFilterableList extends React.Component {
   constructor() {
     super();
     this.state = {filter: ''};
     this.renderRow = this.renderRow.bind(this);
-  }
-
-  componentWillMount() {
-    this.dataSource = new ListView.DataSource({
-      rowHasChanged: (row1, row2) => row1 !== row2
-    });
   }
 
   render() {
@@ -47,7 +45,7 @@ class TDFilterableList extends React.Component {
         </TextInput>
 
         <ListView
-          dataSource={this.dataSource.cloneWithRows(items)}
+          dataSource={dataSource.cloneWithRows(items)}
           renderRow={this.renderRow}
         />
       </View>
