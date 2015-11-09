@@ -20,7 +20,7 @@ var styles = {
   }
 }
 
-class TDList extends React.Component {
+class TDFilterableList extends React.Component {
   constructor() {
     super();
     this.state = {filter: ''};
@@ -66,4 +66,4 @@ class TDList extends React.Component {
 }
 
 
-module.exports = TDList;
+module.exports = TDFilterableList;

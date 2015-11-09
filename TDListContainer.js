@@ -1,7 +1,7 @@
 'use strict';
 var React = require('react-native');
 
-var TDList = require('./TDList');
+var TDFilterableList = require('./TDFilterableList');
 var TDButton = require('./TDButton');
 
 var { View, TextInput } = React;
@@ -137,7 +137,7 @@ class TDListContainer extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <TDList
+        <TDFilterableList
           items={this.state.items}
           onPressItem={this.openItem}
         />
