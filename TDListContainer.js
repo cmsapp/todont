@@ -10,23 +10,13 @@ var styles = {
   container: {
     marginTop: 65,
     flex:1
-  },
-  textbox: {
-    color: '#000000',
-    fontSize: 17,
-    height: 36,
-    padding: 7,
-    borderRadius: 4,
-    borderColor: '#cccccc',
-    borderWidth: 1,
-    marginBottom: 5
   }
-}
+};
 
 class TDListContainer extends React.Component {
   constructor() {
     super();
-    this.state = {items: [], filter: ''};
+    this.state = {items: []};
     this.deleteItem = this.deleteItem.bind(this);
     this.updateItem = this.updateItem.bind(this);
     this.newItem = this.openItem = this.openItem.bind(this);
@@ -145,19 +135,10 @@ class TDListContainer extends React.Component {
   }
 
   render() {
-    var items = 
-      this.state.items.filter(item => { 
-        return item.txt.toUpperCase().includes(this.state.filter.toUpperCase());
-      });
-
     return (
       <View style={styles.container}>
-        <TextInput style={styles.textbox} 
-          value={this.state.filter}
-          onChangeText={filter => this.setState({filter})}>
-        </TextInput>
         <TDList
-          items={items}
+          items={this.state.items}
           onPressItem={this.openItem}
         />
         <TDButton text="New" onPress={this.newItem}/>
