@@ -18,11 +18,9 @@ class TDList extends React.Component {
   }
 
   render() {
-    var dataSource = this.dataSource.cloneWithRows(this.props.items);
-
     return (
       <ListView
-        dataSource={dataSource}
+        dataSource={this.dataSource.cloneWithRows(this.props.items)}
         renderRow={this.renderRow}
       />
     );
