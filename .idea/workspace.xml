@@ -34,8 +34,8 @@
       <file leaf-file-name="TDFilterableList.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TDFilterableList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5865237">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.26493108">
+              <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -406,12 +406,12 @@
       <created>1447040668291</created>
       <option name="number" value="Default" />
       <updated>1447040668291</updated>
-      <workItem from="1447040670617" duration="10490000" />
+      <workItem from="1447040670617" duration="10587000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10490000" />
+    <option name="totallyTimeSpent" value="10587000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="263" y="23" width="1017" height="773" extended-state="0" />
@@ -503,8 +503,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TDFilterableList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5865237">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.26493108">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
           <folding />
         </state>
       </provider>

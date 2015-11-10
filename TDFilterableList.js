@@ -28,7 +28,6 @@ class TDFilterableList extends React.Component {
   constructor() {
     super();
     this.state = {filter: ''};
-    this.renderRow = this.renderRow.bind(this);
   }
 
   render() {
@@ -44,21 +43,18 @@ class TDFilterableList extends React.Component {
 
         <ListView
           dataSource={dataSource.cloneWithRows(filteredItems)}
-          renderRow={this.renderRow}
+          renderRow={(rowData, sectionID, rowID) => {
+						return(
+							<TDListItem
+								item={rowData}
+								onPress={() => this.props.onPressItem(rowData, rowID)}
+							/>
+						);
+					}}
         />
       </View>
     );
   }
-
-  renderRow(rowData, sectionID, rowID) {
-    return(
-      <TDListItem
-        item={rowData}
-        onPress={() => this.props.onPressItem(rowData, rowID)}
-      />
-    );
-  }
-
 }
 
 
