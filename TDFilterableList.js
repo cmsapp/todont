@@ -39,10 +39,8 @@ class TDFilterableList extends React.Component {
 
     return (
       <View style={styles.container}>
-        <TextInput style={styles.textbox} 
-          value={this.state.filter}
-          onChangeText={filter => this.setState({filter})}>
-        </TextInput>
+        <TextInput style={styles.textbox}
+          onChangeText={filter => this.setState({filter})}/>
 
         <ListView
           dataSource={dataSource.cloneWithRows(items)}
