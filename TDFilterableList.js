@@ -32,8 +32,8 @@ class TDFilterableList extends React.Component {
   }
 
   render() {
-    var items = 
-      this.props.items.filter(item => { 
+    var filteredItems =
+      this.props.items.filter(item => {
         return item.txt.toUpperCase().includes(this.state.filter.toUpperCase());
       });
 
@@ -43,7 +43,7 @@ class TDFilterableList extends React.Component {
           onChangeText={filter => this.setState({filter})}/>
 
         <ListView
-          dataSource={dataSource.cloneWithRows(items)}
+          dataSource={dataSource.cloneWithRows(filteredItems)}
           renderRow={this.renderRow}
         />
       </View>
