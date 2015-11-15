@@ -31,7 +31,7 @@ class TDFilterableList extends React.Component {
   render() {
     var filteredItems =
       this.props.items.filter(item => {
-        return item.txt.toUpperCase().includes(this.state.filter.toUpperCase());
+        return item.description.toUpperCase().includes(this.state.filter.toUpperCase());
       });
 
     return (

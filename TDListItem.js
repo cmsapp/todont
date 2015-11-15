@@ -10,8 +10,8 @@ class TDListItem extends React.Component {
       <View>
         <TouchableHighlight onPress={this.props.onPress}>
           <View style={commonStyles.container}>
-            <Text style={styles.txt}>
-              {this.props.item.txt}
+            <Text style={styles.description}>
+              {this.props.item.description}
             </Text>
           </View>
         </TouchableHighlight>
@@ -28,7 +28,7 @@ var styles = {
     marginLeft: 0,
     marginRight: 0
   },
-  txt: {
+  description: {
     fontSize: 17,
     marginLeft: 5,
     marginTop: 2,

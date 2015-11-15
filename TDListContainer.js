@@ -31,20 +31,20 @@ class TDListContainer extends React.Component {
 
     this.setState({
       items: [
-        {txt: 'Have children less than 18 months apart'},
-        {txt: 'Treat Guinness as a meal substitute'},
-        {txt: "'git push --force' to a shared branch"},
-        {txt: 'Assume people know what they are doing'},
-        {txt: 'Alternate tequila shots and white wine'},
-        {txt: 'Block SSH access in iptables'},
-        {txt: 'Date a commercial lawyer'},
-        {txt: 'Skate a 10 foot vert ramp'},
-        {txt: 'Design a user interface myself'},
-        {txt: 'Take a knife to a gunfight'},
-        {txt: 'Do solid state physics'},
-        {txt: 'Wake a sleeping baby'},
-        {txt: "Use a friend's video rental card"},
-        {txt: "Get caught in an avalanche"}
+        {description: 'Have children less than 18 months apart'},
+        {description: 'Treat Guinness as a meal substitute'},
+        {description: "'git push --force' to a shared branch"},
+        {description: 'Assume people know what they are doing'},
+        {description: 'Alternate tequila shots and white wine'},
+        {description: 'Block SSH access in iptables'},
+        {description: 'Date a commercial lawyer'},
+        {description: 'Skate a 10 foot vert ramp'},
+        {description: 'Design a user interface myself'},
+        {description: 'Take a knife to a gunfight'},
+        {description: 'Do solid state physics'},
+        {description: 'Wake a sleeping baby'},
+        {description: "Use a friend's video rental card"},
+        {description: "Get caught in an avalanche"}
       ]
     });
   }
@@ -78,7 +78,7 @@ class TDListContainer extends React.Component {
       var rowData = this.state.items[newIndex];
       this.props.navigator.replace({
         name: 'item',
-        title: rowData.txt,
+        title: rowData.description,
         item: rowData,
         itemId: newIndex.toString(),
         update: this.updateItem,
@@ -96,7 +96,7 @@ class TDListContainer extends React.Component {
       var rowData = this.state.items[newIndex];
       this.props.navigator.replace({
         name: 'item',
-        title: rowData.txt,
+        title: rowData.description,
         item: rowData,
         itemId: newIndex.toString(),
         update: this.updateItem,
@@ -113,7 +113,7 @@ class TDListContainer extends React.Component {
     var index = parseInt(rowID);
     this.props.navigator.push({
       name: 'item',
-      title: rowData && rowData.txt || 'New',
+      title: rowData && rowData.description || 'New',
       item: rowData,
       itemId: rowID,
       update: this.updateItem,
@@ -122,7 +122,7 @@ class TDListContainer extends React.Component {
       next: this.next.bind(this, index),
       delete: this.deleteItem
     });
-    //   title: rowData && rowData.txt || 'New',
+    //   title: rowData && rowData.description || 'New',
     //   component: TDEdit,
     //   passProps: {
     //     item: rowData,

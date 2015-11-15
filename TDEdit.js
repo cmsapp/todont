@@ -28,7 +28,7 @@ class TDEdit extends React.Component {
     this.onDelete = this.onDelete.bind(this);
     var item = props.item;
     this.state = item ? {
-      txt: item.txt,
+      description: item.description,
       doneItBefore: item.doneItBefore,
       severity: item.severity
     } : {};
@@ -54,8 +54,8 @@ class TDEdit extends React.Component {
         <TDLabel value="Thing not to do"/>
         <TextInput
           ref='textInput'
-          value={this.state.txt}
-          onChangeText={txt => this.setState({txt})}
+          value={this.state.description}
+          onChangeText={description => this.setState({description})}
           style={styles.textbox}
         />
         <TDLabel value="Done it before?"/>
