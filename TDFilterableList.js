@@ -13,10 +13,8 @@ var styles = {
     fontSize: 17,
     height: 36,
     padding: 7,
-    borderRadius: 4,
     borderColor: '#cccccc',
-    borderWidth: 1,
-    marginBottom: 5
+    borderWidth: 1
   }
 }
 

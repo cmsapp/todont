@@ -8,7 +8,7 @@ var { View, TextInput } = React;
 
 var styles = {
   container: {
-    marginTop: 65,
+    marginTop: 63,
     flex:1
   }
 };
